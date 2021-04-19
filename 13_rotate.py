@@ -17,6 +17,7 @@ rotationMatrix = cv2.getRotationMatrix2D( center, rotationAngle, scaleFactor )
 print(rotationMatrix)
 
 rotate_img = cv2.warpAffine( source, rotationMatrix, (source.shape[1], source.shape[0])  )
+#                              원본     변환 설정           출력할 이미지 크기
 
 cv2.imshow('origin', source)
 cv2.imshow('rotate', rotate_img)
