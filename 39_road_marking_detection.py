@@ -92,7 +92,7 @@ sharpened_img2 = cv2.filter2D( gray_img, -1, sharp_kernel_2 )
 # cv2.imshow('rotated', rotated_img)
 
 image = cv2.imread('data2/test_image3.jpg')
-cv2.imshow('origin',image)
+# cv2.imshow('origin',image)
 
 height = image.shape[0]
 width = image.shape[1]
@@ -105,11 +105,12 @@ T_matrix = np.array( [
 print(T_matrix)
 
 translation_img = cv2.warpAffine(image, T_matrix, (width, height))
-cv2.imshow('trans', translation_img)
+# cv2.imshow('trans', translation_img)
 
 # resize - 확대, 축소.
 resized_img = cv2.resize(image, None, fx=0.5, fy=0.5, interpolation=cv2.INTER_CUBIC)
-cv2.imshow('resized', resized_img)
+# cv2.imshow('resized', resized_img)
+
 
 cv2.waitKey()
 cv2.destroyAllWindows()
