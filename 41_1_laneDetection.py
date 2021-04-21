@@ -57,7 +57,9 @@ image = cv2.imread('data3/test_image.jpg')
 lanelines_image = image.copy()
 
 canny_conversion = canny_edge(lanelines_image)
+cv2.imshow('canny',canny_conversion)
 ROI_conversion = reg_of_interest(canny_conversion)
+cv2.imshow('ROI',ROI_conversion)
 
 lines = cv2.HoughLinesP(ROI_conversion, 1, np.pi/180, 50, minLineLength=50, maxLineGap=15)
 
@@ -67,7 +69,6 @@ combine_image = cv2.addWeighted( lanelines_image, 0.8, lines_image, 1, 1 )
 
 cv2.imshow('origin', image)
 cv2.imshow('lines', lines_image)
-cv2.imshow('ROI',ROI_conversion)
 cv2.imshow('combine',combine_image)
 
 
